@@ -1,0 +1,272 @@
+*{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    border: border-box;
+    color: white;
+}
+
+.navbar{
+    height: 60px;
+    background-color: #0f1111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.AmazonLogo{
+    height: 50px;
+    width: 113px;
+}
+
+.logo{
+    background-image: url(amazon_logo.png);
+    background-size:cover;
+    height: 50px;
+    width: 113px;
+
+}
+
+.border{
+    border: 2px solid transparent;
+}
+
+.border:hover {
+    border: 2px solid white;
+}
+
+.deliver {
+    font-size: 0.75rem;
+    color: #cccccc;
+    margin-left: 15px;
+}
+
+.tz{
+    font: 1rem;
+    margin-left: 3px;
+}
+
+.AddIcon {
+    display: flex;
+    align-items: center;
+}
+
+.NavSearch{
+    display: flex;
+    justify-content: space-evenly;
+    color: black;
+    background-color: #febd68 ;
+    border-radius: 4px; 
+    height: 40px;
+    width: 620px;
+    
+}
+
+.NavOpt{
+    color: #0f1111;
+    text-align: center;
+    width: 50px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border: none;
+}
+
+.NavInput{
+    width: 100%;
+    font-size: 1rem;
+    border: none;
+    color: black;
+}
+
+.SearchIcon{
+    width: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.NavSearch:hover{
+    border: 2px solid orange;
+}
+
+span{
+    font-size: 0.75rem;
+}
+
+.NavSecond{
+    font-size: 1rem; 
+}
+
+.NavCart i{
+    font-size: 30px;
+}
+
+.NavCart{
+    font-size: 0.85rem;
+    font-weight: 700;
+
+}
+
+.SecondNav{
+    background-color: #222f3d;
+    display: flex;
+    height: 39px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.PanelOps p{
+    display: inline;
+    margin-left: 20px;
+}
+
+.PanelOps{
+    width: 70%;
+    font-size: 0.85rem;
+}
+
+.deals {
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.HeroSection{
+    background-image: url(Hero_image.jpg);
+    height: 350px;
+    background-size:cover ;
+    display: flex;
+    justify-content:center ;
+    align-items: flex-end;
+    
+}
+
+.heromsg {
+    background-color: white;
+    height: 30px;
+    width: 80%;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    margin-bottom: 25px;
+    
+}
+
+.heromsg a  {
+    color: #007185;
+    
+}
+
+.heromsg p  {
+    color: black; 
+}
+
+.ShopSection {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #e2e7e2;
+}
+
+.box {
+    height: 450px;
+    width: 23%;
+    padding: 20px 0px 15px ;
+    margin-top: 15px;
+    position: relative;
+    
+}
+
+.box h2 {
+    color: black;
+    display: flex;
+    justify-content: center;
+}
+
+.box a {
+    color: rgb(121, 121, 243);
+    position: absolute;
+    bottom: 15px;
+    left: 10px;
+    
+}
+
+.boxImage {
+    height: 350px;
+    background-image: cover;
+    background-repeat: no-repeat;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.footer {
+    margin-top: 55px;
+}
+
+.panel1 {
+    color: black;
+    background-color:  #37475a; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    font-size: 1rem;
+}
+
+.panel2 {
+    background-color: #222f3d;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+ul {
+    margin-top: 30px;
+}
+
+ul p {
+    font-size: 1.5rem;
+}
+
+ul a {
+    display: block;
+    font-size: 0.85rem;
+    margin-top: 12px;
+    color: #dddddd;
+}
+
+.panel3 {
+    background-color: #222f3d;
+    height: 60px;
+    border: 2px solid #dddddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.logoF{
+    background-image: url(amazon_logo.png);
+    background-size:cover;
+    height: 50px;
+    width: 100px;
+
+}
+
+.panel4 {
+    background-color: #0f1111;
+    height: 80px;
+    font-size: 0.85rem;
+    text-align: center;
+    
+
+}
+
+.pages {
+   
+    padding: 18px;
+    
+}
+
