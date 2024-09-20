@@ -18,12 +18,12 @@ const winningPattern = [
     [6, 7, 8],
 ];
 
-const resetBtn = () => {
+function resetBtn() {
     turnX = true;
     count = 0;
     enableBoxes();
     Container.classList.add("hide");
-};
+}
 
 boxes.forEach((box) => {
     box.addEventListener("click", () => {
