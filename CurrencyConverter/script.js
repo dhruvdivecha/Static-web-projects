@@ -1,4 +1,4 @@
-
+const BASE_URL = ${{ secrets.CC_API }};
 
 // Function to get the country flag using Unicode symbols
 function getFlagEmoji(countryCode) {
