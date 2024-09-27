@@ -1,1 +1,1 @@
-const BASE_URL = ${{ secrets.CURRENCYCONVERTORAPI }} 
+const BASE_URL = ${{ secrets.CURRENCYCONVERTORAPI }} ;
