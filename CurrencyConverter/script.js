@@ -1,4 +1,6 @@
-import { BASE_URL } from './env';
+require('dotenv').config();
+
+const BASE_URL = process.env.BASE_URL;
 
 // Function to get the country flag using Unicode symbols
 function getFlagEmoji(countryCode) {
