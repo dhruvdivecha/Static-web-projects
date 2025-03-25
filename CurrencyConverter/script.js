@@ -36,36 +36,30 @@ function populateDropdowns() {
 async function convertCurrency() {
   const fromCurrency = document.getElementById("fromCurrency").value;
   const toCurrency = document.getElementById("toCurrency").value;
-  const amountFrom = document.getElementById("amountFrom").value;
+  const amountFrom = document.getElementById("amountFrom").value.trim();
 
-  // Check if the input amount is valid
+  // Improved input validation (allow decimals)
   if (amountFrom === "" || isNaN(amountFrom) || amountFrom <= 0) {
     document.getElementById("amountTo").value = "Invalid Amount";
     return;
   }
 
   try {
-    // Fetch the exchange rates from the API
     const response = await fetch(`${BASE_URL}${fromCurrency}`);
-    if (!response.ok) {
-      throw new Error("Failed to fetch exchange rates");
-    }
-
+    if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+    
     const data = await response.json();
-    const conversionRates = data.rates; // Correct property name
+    if (!data.rates) throw new Error("No rates found in response");
 
-    // Check if the toCurrency is in the conversion rates
-    if (!conversionRates[toCurrency]) {
-      throw new Error(`Invalid conversion rate for ${toCurrency}`);
-    }
+    const conversionRate = data.rates[toCurrency];
+    if (!conversionRate) throw new Error(`Rate for ${toCurrency} not found`);
 
-    // Perform the conversion and display the result
-    const conversionRate = conversionRates[toCurrency];
     const convertedAmount = (amountFrom * conversionRate).toFixed(2);
     document.getElementById("amountTo").value = `${convertedAmount} ${toCurrency}`;
+    
   } catch (error) {
-    console.error("Error converting currency:", error);
-    document.getElementById("amountTo").value = "Conversion Error";
+    console.error("Conversion failed:", error.message);
+    document.getElementById("amountTo").value = `Error: ${error.message}`;
   }
 }
 
