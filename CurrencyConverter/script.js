@@ -1,8 +1,7 @@
-import {countryList} from './codes.js';
+// Access countryList from the global scope (defined in codes.js)
+// Removed require and import statements
 
-require('dotenv').config();
-
-const BASE_URL = process.env.BASE_URL;
+const BASE_URL = "https://api.exchangerate.host/latest?base=";
 
 // Function to get the country flag using Unicode symbols
 function getFlagEmoji(countryCode) {
@@ -27,6 +26,10 @@ function populateDropdowns() {
     fromDropdown.appendChild(optionElement.cloneNode(true));
     toDropdown.appendChild(optionElement);
   }
+
+  // Set default values
+  fromDropdown.value = 'USD';
+  toDropdown.value = 'EUR';
 }
 
 // Function to fetch the exchange rates and update the conversion
@@ -42,14 +45,14 @@ async function convertCurrency() {
   }
 
   try {
-    // Fetch the exchange rates from the API using the `fromCurrency` as the base
+    // Fetch the exchange rates from the API
     const response = await fetch(`${BASE_URL}${fromCurrency}`);
     if (!response.ok) {
       throw new Error("Failed to fetch exchange rates");
     }
 
     const data = await response.json();
-    const conversionRates = data.conversion_rates; // Get conversion rates object
+    const conversionRates = data.rates; // Correct property name
 
     // Check if the toCurrency is in the conversion rates
     if (!conversionRates[toCurrency]) {
@@ -62,16 +65,15 @@ async function convertCurrency() {
     document.getElementById("amountTo").value = `${convertedAmount} ${toCurrency}`;
   } catch (error) {
     console.error("Error converting currency:", error);
+    document.getElementById("amountTo").value = "Conversion Error";
   }
 }
 
-// Event listeners for real-time conversion
+// Event listeners
 document.getElementById("fromCurrency").addEventListener("change", convertCurrency);
 document.getElementById("toCurrency").addEventListener("change", convertCurrency);
 document.getElementById("amountFrom").addEventListener("input", convertCurrency);
-
-// Populate the dropdowns on page load
-window.onload = populateDropdowns;
-
-// Add event listener to the convert button
 document.getElementById("convertButton").addEventListener("click", convertCurrency);
+
+// Populate dropdowns on load
+window.onload = populateDropdowns;
