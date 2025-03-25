@@ -1,3 +1,5 @@
+import {countryList} from './codes.js';
+
 require('dotenv').config();
 
 const BASE_URL = process.env.BASE_URL;
@@ -70,3 +72,6 @@ document.getElementById("amountFrom").addEventListener("input", convertCurrency)
 
 // Populate the dropdowns on page load
 window.onload = populateDropdowns;
+
+// Add event listener to the convert button
+document.getElementById("convertButton").addEventListener("click", convertCurrency);
