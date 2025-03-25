@@ -1,4 +1,4 @@
-
+import { BASE_URL } from './env';
 
 // Function to get the country flag using Unicode symbols
 function getFlagEmoji(countryCode) {
